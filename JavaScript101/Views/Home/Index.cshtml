@@ -1,31 +1,68 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>DoStuff</title>
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+    <script type="text/javascript">
+        var greeting = "Hello World";
+        var content = "This page has JavaScript in it!";
+        var num = 2;
+        var numInStr = "This string has a variable in it: " + num;
+        var booksNBands = ["Call of the Wild", "Evanessence", "Pride and Prejudice", "Imagine Dragons"];
+        var sentence = "Schlitz four dollar toast godard truffaut bespoke "
+                            + "neutra artisan pop-up. Chia keytar single-origin "
+                            + "coffee sustainable disrupt.";
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+        window.onload = function () {
+            document.write("Array Before: " + "<br />");
+            displayBNB();
+            pushBNB();
+
+            document.write("<br />" + "Array After: " + "<br />");
+            displayBNB();
+
+            document.write("<br />" + "Sentence Before: " + "<br />");
+            document.write(sentence);
+
+            document.write("<br /> <br/>" + "Sentence After: " + "<br />");
+            longWords();
+
+            document.write("<br /> <br />" + "Other stuff: " + "<br />");
+            displayStuff();
+        }
+
+        function displayStuff() {
+            document.write(greeting + "<br />");
+            document.write(content + "<br />");
+            document.write(numInStr + "<br />");
+        }
+
+        function pushBNB() {
+            booksNBands.push("One Republic", "The Little Prince", "Foo Fighters");
+        };
+
+        function displayBNB() {
+            for (b in booksNBands) {
+                document.write(booksNBands[b] + "<br/>");
+            }
+        };
+
+        function longWords() {
+            sentence = sentence.split(" ");
+
+            for (w in sentence) {
+                if (sentence[w].length == 6) {
+                    document.write(sentence[w]);
+                }
+            }
+        };
+        
+    </script>
+
+</head>
+<body>
+    <h1>These</h1>
+    <h1>aren't</h1>
+    <h1>working... ?!</h1>
+</body>
+</html>
